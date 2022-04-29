@@ -22,6 +22,6 @@ class Dashboard2 extends CI_Controller {
 	{
 		$this->load->model('akun_model');
 		$data['anggota']= $this->akun_model->tampilAkun();
-		$this->load->view('admin/dashboard2', $data);
+		$this->load->view('admin/dashboard', $data);
 	}
 }
