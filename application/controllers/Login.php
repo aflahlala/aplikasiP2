@@ -19,7 +19,7 @@ class Login extends CI_Controller {
 				$sess_data['username'] = $data->username;
 				$this->session->set_userdata($sess_data);
 			$this->session->set_flashdata('pesan', 'Maaf, kombinasi username dengan password salah.');
-			redirect('Dashboard1');
+			redirect('Dashboard');
 		}
 	}}
 		// $this->load->library('form_validation');

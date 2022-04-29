@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard1 extends CI_Controller {
+class Dashboard extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,6 +22,6 @@ class Dashboard1 extends CI_Controller {
 	{
 		$this->load->model('akun_model');
 		$data['anggota']= $this->akun_model->tampilAkun();
-		$this->load->view('admin/dashboard1', $data);
+		$this->load->view('admin/dashboard', $data);
 	}
 }

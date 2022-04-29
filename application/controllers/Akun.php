@@ -123,6 +123,6 @@ class Akun extends CI_Controller {
 	}
 	public function cancel()
 	{
-		redirect('Dashboard1');
+		redirect('Dashboard');
 	}
 }
