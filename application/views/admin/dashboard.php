@@ -16,8 +16,8 @@
 					</div>
 					<div class="card-body p-0">
 						<div class="bs-stepper">
+
 							<div class="bs-stepper-header" role="tablist">
-								<!-- your steps here -->
 								<div class="step" data-target="#logins-part">
 									<button type="button" class="step-trigger" role="tab" aria-controls="logins-part"
 											id="logins-part-trigger">
@@ -50,7 +50,10 @@
 									</button>
 								</div>
 							</div>
+
+							<?php echo form_open("dashboard/create") ?>
 							<div class="bs-stepper-content">
+
 								<!-- your steps content here -->
 								<div id="logins-part" class="content" role="tabpanel"
 									 aria-labelledby="logins-part-trigger">
@@ -58,47 +61,49 @@
 									<div class="card-body">
 										<div class="form-group">
 											<label for="No_LPTP">Nomor LPTP</label>
-											<input type="text" id="No_LPTP" class="form-control"
-												   value="LPTP- /WBC.12/2022">
+											<input type="text" id="No_LPTP" class="form-control" name="nomor_lptp"
+												   value="LPTP- /WBC.12/2022"> <?php //TODO: masking?>
 										</div>
 										<div class="row">
 											<div class="col-sm-6">
 												<!-- text input -->
 												<div class="form-group">
 													<label>Surat Perintah Nomor</label>
-													<input type="text" id="No_PRIN" class="form-control"
+													<input name="no_prin" type="text" id="No_PRIN" class="form-control"
 														   value="PRIN- /WBC.12/2022">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label>Tanggal PRIN</label>
-													<input type="date" id="Tgl_PRIN" class="form-control">
+													<input name="tgl_prin" type="date" id="Tgl_PRIN"
+														   class="form-control">
 												</div>
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="Locus">Locus</label>
-											<input type="text" id="Locus" class="form-control">
+											<input name="locus" type="text" id="Locus" class="form-control">
 										</div>
 										<div class="row">
 											<div class="col-sm-6">
 												<!-- text input -->
 												<div class="form-group">
 													<label>Tempus</label>
-													<input type="date" id="Tempus" class="form-control">
+													<input name="tempus" type="date" id="Tempus" class="form-control">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label>Jam</label>
-													<input type="time" id="Jam" class="form-control">
+													<input name="jam" type="time" id="Jam" class="form-control">
 												</div>
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="Uraian_Penindakan">Kategori dan Uraian Penindakan</label>
-											<textarea id="Uraian_Penindakan" class="form-control" rows="4"></textarea>
+											<textarea name="kategori_uraian_penindakan" id="Uraian_Penindakan"
+													  class="form-control" rows="4"></textarea>
 										</div>
 										<h5>A. Sarana Pengangkut</h5>
 										<div class="row">
@@ -106,13 +111,15 @@
 												<!-- text input -->
 												<div class="form-group">
 													<label>Jenis</label>
-													<input type="text" id="Sarana_Jenis" class="form-control">
+													<input name="jenis" type="text" id="Sarana_Jenis"
+														   class="form-control">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label>Nomor Peti Kemas</label>
-													<input type="text" id="Sarana_NoPetiKemas" class="form-control">
+													<input name="no_peti_kemas" type="text" id="Sarana_NoPetiKemas"
+														   class="form-control">
 												</div>
 											</div>
 										</div>
@@ -121,20 +128,23 @@
 												<!-- text input -->
 												<div class="form-group">
 													<label>No.Pol/Voy/Flight</label>
-													<input type="text" id="Sarana_NoPol" class="form-control">
+													<input name="no_pol_voy" type="text" id="Sarana_NoPol"
+														   class="form-control">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label>Ukuran</label>
-													<input type="text" id="Sarana_Ukuran" class="form-control">
+													<input name="ukuran" type="text" id="Sarana_Ukuran"
+														   class="form-control">
 												</div>
 											</div>
 										</div>
 										<h5>B. Barang</h5>
 										<div class="form-group">
 											<label for="inputBarang">Komoditi/Jenis</label>
-											<select id="inputBarang" class="form-control custom-select">
+											<select name="komoditi_jenis" id="inputBarang"
+													class="form-control custom-select">
 												<option selected disabled>Pilih Jenis</option>
 												<option>BKC HT</option>
 												<option>BKC MMEA</option>
@@ -142,25 +152,29 @@
 										</div>
 										<div class="form-group">
 											<label for="Barang_Jumlah">Jumlah</label>
-											<textarea id="Barang_Jumlah" class="form-control" rows="4"></textarea>
+											<textarea name="jumlah" id="Barang_Jumlah" class="form-control"
+													  rows="4"></textarea>
 										</div>
 										<h5>C. Bangunan / Tempat</h5>
 										<div class="form-group">
 											<label for="Bangunan_Alamat">Alamat</label>
-											<textarea id="Bangunan_Alamat" class="form-control" rows="4"></textarea>
+											<textarea name="alamat" id="Bangunan_Alamat" class="form-control"
+													  rows="4"></textarea>
 										</div>
 										<div class="row">
 											<div class="col-sm-6">
 												<!-- text input -->
 												<div class="form-group">
 													<label>No Reg Bangunan/ NPPBKC/ dll</label>
-													<input type="text" id="Bangunan_NoReg" class="form-control">
+													<input name="no_reg_bangunan" type="text" id="Bangunan_NoReg"
+														   class="form-control">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label>Pemilik/ Yang Menguasai</label>
-													<input type="text" id="Bangunan_Pemilik" class="form-control">
+													<input name="pemilik_menguasai" type="text" id="Bangunan_Pemilik"
+														   class="form-control">
 												</div>
 											</div>
 										</div>
@@ -170,13 +184,15 @@
 												<!-- text input -->
 												<div class="form-group">
 													<label>Nama</label>
-													<input type="text" id="Orang_Nama" class="form-control">
+													<input name="orang_nama" type="text" id="Orang_Nama"
+														   class="form-control">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label for="Orang_JenisKelamin">Jenis Kelamin</label>
-													<select id="Orang_JenisKelamin" class="form-control custom-select">
+													<select name="jenis_kelamin" id="Orang_JenisKelamin"
+															class="form-control custom-select">
 														<option selected disabled>Pilih Jenis Kelamin</option>
 														<option>Pria</option>
 														<option>Wanita</option>
@@ -189,13 +205,15 @@
 												<!-- text input -->
 												<div class="form-group">
 													<label>Alamat</label>
-													<input type="text" id="Orang_Alamat" class="form-control">
+													<input name="orang_alamat" type="text" id="Orang_Alamat"
+														   class="form-control">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label>Tanggal Lahir</label>
-													<input type="date" id="Orang_Lahir" class="form-control">
+													<input name="orang_lahir" type="date" id="Orang_Lahir"
+														   class="form-control">
 												</div>
 											</div>
 										</div>
@@ -204,13 +222,15 @@
 												<!-- text input -->
 												<div class="form-group">
 													<label>Identitas</label>
-													<input type="text" id="Orang_Identitas" class="form-control">
+													<input name="orang_identitas" type="text" id="Orang_Identitas"
+														   class="form-control">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label>Kewarganegaraan</label>
-													<input type="text" id="Orang_Kwn" class="form-control">
+													<input name="orang_kwn" type="text" id="Orang_Kwn"
+														   class="form-control">
 												</div>
 											</div>
 										</div>
@@ -219,14 +239,14 @@
 												<!-- text input -->
 												<div class="form-group">
 													<label>SB Penindakan</label>
-													<input type="text" id="No_SBP" class="form-control"
+													<input name="no_sbp" type="text" id="No_SBP" class="form-control"
 														   value="SBP- /WBC.12/2022">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label>Tanggal SBP</label>
-													<input type="date" id="Tgl_SBP" class="form-control">
+													<input name="tgl_sbp" type="date" id="Tgl_SBP" class="form-control">
 												</div>
 											</div>
 										</div>
@@ -236,13 +256,15 @@
 												<!-- text input -->
 												<div class="form-group">
 													<label>Nama</label>
-													<input type="text" id="Kepada_Nama" class="form-control">
+													<input name="kepada_nama" type="text" id="Kepada_Nama"
+														   class="form-control">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label>Alamat</label>
-													<input type="text" id="Kepada_Alamat" class="form-control">
+													<input name="kepada_alamat" type="text" id="Kepada_Alamat"
+														   class="form-control">
 												</div>
 											</div>
 										</div>
@@ -251,47 +273,54 @@
 												<!-- text input -->
 												<div class="form-group">
 													<label>Identitas</label>
-													<input type="text" id="Kepada_Identitas" class="form-control">
+													<input name="kepada_identitas" type="text" id="Kepada_Identitas"
+														   class="form-control">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group">
 													<label>Selaku</label>
-													<input type="text" id="Kepada_Selaku" class="form-control">
+													<input name="kepada_selaku" type="text" id="Kepada_Selaku"
+														   class="form-control">
 												</div>
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="HalYangTerjadi">Hal Yang Terjadi</label>
-											<textarea id="HalYangTerjadi" class="form-control" rows="4"></textarea>
+											<textarea name="hal_yang_terjadi" id="HalYangTerjadi" class="form-control"
+													  rows="4"></textarea>
 										</div>
 										<div class="form-group">
 											<label for="Alasan">Alasan Tidak Dilakukan Penindakan</label>
-											<textarea id="Alasan" class="form-control" rows="4"></textarea>
+											<textarea name="alasan" id="Alasan" class="form-control"
+													  rows="4"></textarea>
 										</div>
 									</div>
 
 
-									<button class="btn btn-primary" onclick="stepper.next()">Next</button>
+									<a class="btn btn-primary" onclick="stepper.next()">Next</a>
 								</div>
 								<div id="information-part" class="content" role="tabpanel"
 									 aria-labelledby="information-part-trigger">
 									<div class="form-group">
 										<label for="No_LPHP">Nomor LPHP</label>
-										<input type="text" id="No_LPHP" class="form-control" value="LPHP- /WBC.12/2022">
+										<input name="no_lphp" type="text" id="No_LPHP" class="form-control"
+											   value="LPHP- /WBC.12/2022">
 									</div>
 									<div class="form-group">
 										<label for="AnalisaHasil">Analisa Hasil Penindakan</label>
-										<textarea id="AnalisaHasil" class="form-control" rows="4"></textarea>
+										<textarea name="analisa_hasil" id="AnalisaHasil" class="form-control"
+												  rows="4"></textarea>
 									</div>
-									<button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-									<button class="btn btn-primary" onclick="stepper.next()">Next</button>
+									<a class="btn btn-primary" onclick="stepper.previous()">Previous</a>
+									<a class="btn btn-primary" onclick="stepper.next()">Next</a>
 								</div>
 								<div id="information-part3" class="content" role="tabpanel"
 									 aria-labelledby="information-part-trigger">
 									<div class="form-group">
 										<label for="JenisPelanggaran_LP">Jenis Pelanggaran</label>
-										<select id="JenisPelanggaran_LP" class="form-control custom-select">
+										<select name="jenis_pelanggaran" id="JenisPelanggaran_LP"
+												class="form-control custom-select">
 											<option selected disabled>Pilih Jenis</option>
 											<option>Cukai</option>
 											<option>Pabean</option>
@@ -300,7 +329,8 @@
 									</div>
 									<div class="form-group">
 										<label for="UraianModus_LP">Uraian Modus</label>
-										<textarea id="UraianModus_LP" class="form-control" rows="4"></textarea>
+										<textarea name="uraian_modus_lp" id="UraianModus_LP" class="form-control"
+												  rows="4"></textarea>
 									</div>
 									<h5>Diduga dilakukan Oleh :</h5>
 									<div class="row">
@@ -308,13 +338,15 @@
 											<!-- text input -->
 											<div class="form-group">
 												<label>Nama</label>
-												<input type="text" id="Orang_Nama_LP" class="form-control">
+												<input name="orang_nama_lp" type="text" id="Orang_Nama_LP"
+													   class="form-control">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="Orang_JenisKelamin_LP">Jenis Kelamin</label>
-												<select id="Orang_JenisKelamin_LP" class="form-control custom-select">
+												<select name="orang_jenis_kelamin_lp" id="Orang_JenisKelamin_LP"
+														class="form-control custom-select">
 													<option selected disabled>Pilih Jenis Kelamin</option>
 													<option>Pria</option>
 													<option>Wanita</option>
@@ -327,13 +359,15 @@
 											<!-- text input -->
 											<div class="form-group">
 												<label>Alamat</label>
-												<input type="text" id="Orang_Alamat_LP" class="form-control">
+												<input name="orang_alamat_lp" type="text" id="Orang_Alamat_LP"
+													   class="form-control">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label>Tanggal Lahir</label>
-												<input type="date" id="Orang_Lahir_LP" class="form-control">
+												<input name="orang_lahir_lp" type="date" id="Orang_Lahir_LP"
+													   class="form-control">
 											</div>
 										</div>
 									</div>
@@ -342,16 +376,18 @@
 											<!-- text input -->
 											<div class="form-group">
 												<label>Nomor Identitas</label>
-												<input type="text" id="Orang_Identitas_LP" class="form-control">
+												<input name="orang_identitas_lp" type="text" id="Orang_Identitas_LP"
+													   class="form-control">
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="DokumenSurat">Dokumen/Surat Terkait</label>
-										<textarea id="DokumenSurat" class="form-control" rows="4"></textarea>
+										<textarea name="dokumen_surat" id="DokumenSurat" class="form-control"
+												  rows="4"></textarea>
 									</div>
-									<button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-									<button class="btn btn-primary" onclick="stepper.next()">Next</button>
+									<a class="btn btn-primary" onclick="stepper.previous()">Previous</a>
+									<a class="btn btn-primary" onclick="stepper.next()">Next</a>
 								</div>
 								<div id="information-part4" class="content" role="tabpanel"
 									 aria-labelledby="information-part-trigger">
@@ -360,7 +396,7 @@
 
 									<div class="form-group">
 										<label for="inputKabid">Kabid P2</label>
-										<select id="inputSeksi" class="form-control custom-select"
+										<select name="kabid_p2_nama" id="inputSeksi" class="form-control custom-select"
 												onchange="myFunction(this.value);">
 											<option selected disabled>Pilih Nama</option>
 											<?php foreach ($anggota as $key => $data): ?>
@@ -370,11 +406,12 @@
 									</div>
 									<div class="form-group">
 										<label for="NIP_Kabid">NIP Kabid P2</label>
-										<input type="text" id="NIP_Kabid" class="form-control">
+										<input name="kabid_p2_nip" type="text" id="NIP_Kabid" class="form-control">
 									</div>
 									<div class="form-group">
 										<label for="inputSeksi">Kepala Seksi Penindakan I</label>
-										<select id="inputSeksi" class="form-control custom-select"
+										<select name="kasi_penindakan1_nama" id="inputSeksi"
+												class="form-control custom-select"
 												onchange="myFunctionSek(this.value);">
 											<option selected disabled>Pilih Nama</option>
 											<?php foreach ($anggota as $key => $data): ?>
@@ -384,11 +421,13 @@
 									</div>
 									<div class="form-group">
 										<label for="NIP_SeksiSatu">NIP Seksi Penindakan I</label>
-										<input type="text" id="NIP_Seksi" class="form-control">
+										<input name="kasi_penindakan1_nip" type="text" id="NIP_Seksi"
+											   class="form-control">
 									</div>
 									<div class="form-group">
 										<label for="inputPelaksana_Satu">Pelaksana Satu</label>
-										<select id="inputSeksi" class="form-control custom-select"
+										<select name="pelaksana1_nama" id="inputSeksi"
+												class="form-control custom-select"
 												onchange="myFunctionPel1(this.value);">
 											<option selected disabled>Pilih Nama</option>
 											<?php foreach ($anggota as $key => $data): ?>
@@ -398,11 +437,12 @@
 									</div>
 									<div class="form-group">
 										<label for="NIP_PenSatu">NIP Pelaksana Satu</label>
-										<input type="text" id="NIP_PenSatu" class="form-control">
+										<input name="pelaksana1_nip" type="text" id="NIP_PenSatu" class="form-control">
 									</div>
 									<div class="form-group">
 										<label for="inputPelaksana_Dua">Pelaksana Dua</label>
-										<select id="inputSeksi" class="form-control custom-select"
+										<select name="pelaksana2_nama" id="inputSeksi"
+												class="form-control custom-select"
 												onchange="myFunctionPel2(this.value);">
 											<option selected disabled>Pilih Nama</option>
 											<?php foreach ($anggota as $key => $data): ?>
@@ -412,13 +452,14 @@
 									</div>
 									<div class="form-group">
 										<label for="NIP_PenDua">NIP Pelaksana Dua</label>
-										<input type="text" id="NIP_PenDua" class="form-control">
+										<input name="pelaksana2_nip" type="text" id="NIP_PenDua" class="form-control">
 									</div>
 
 									<button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
 									<button type="submit" class="btn btn-primary">Submit</button>
 								</div>
 							</div>
+							<?php echo form_close() ?>
 						</div>
 					</div>
 					<!-- /.card-body -->
